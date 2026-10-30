@@ -1,0 +1,144 @@
+:root {
+  --bg: #F7F5F0;
+  --navy: #26364A;
+  --navy2: #232323;
+  --teal: #874D3E;
+  --teal-soft: #ECE9E2;
+  --red: #A33B32;
+  --muted: #565B62;
+  --line: #D8D5CE;
+  --white: #FFFFFF;
+  --shadow: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--navy2);
+}
+
+.eyebrow,
+.page-intro .badge {
+  color: var(--navy);
+}
+
+.nav button,
+.filterbar,
+.kpi,
+.panel {
+  box-shadow: none;
+  border-radius: 4px;
+}
+
+.filterbar {
+  background: var(--white);
+}
+
+.brand {
+  gap: 0;
+}
+
+.eyebrow {
+  color: var(--navy);
+  font-size: 11px;
+  letter-spacing: .04em;
+}
+
+.badge {
+  border-radius: 4px;
+  background: var(--teal-soft);
+  color: var(--navy);
+  font-size: 11px;
+}
+
+.nav button:focus-visible,
+.filterbar select:focus-visible,
+.reset:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.filterbar select {
+  min-height: 44px;
+}
+
+.reset {
+  min-height: 44px;
+  padding: 8px 10px;
+}
+
+.nav button {
+  min-height: 44px;
+}
+
+.chart-label,
+.bar-value,
+.data-table {
+  font-size: 11px;
+}
+
+.data-table { font-size: 12px; }
+.chart-label { fill: #565B62; }
+.bar-value { fill: #26364A; }
+.chart svg circle[fill="#0F8B8D"] { fill: var(--teal); }
+.area { fill: rgba(135, 77, 62, .10); }
+
+.page-intro p,
+.period,
+.filterbar label {
+  color: var(--muted);
+}
+
+::selection {
+  background: var(--navy);
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 12px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+
+  .period {
+    margin-left: 0;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .nav button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .filterbar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .filterbar label {
+    min-width: 0;
+  }
+
+  .filterbar select {
+    width: 100%;
+  }
+
+  .reset {
+    grid-column: 1 / -1;
+  }
+}

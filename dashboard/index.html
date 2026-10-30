@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Superstore | Profitability Intelligence</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-accessibility.css?v=20261029b" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div><h1>Global Superstore</h1><p>Sales, profitability and performance drivers</p></div></div>
+      <div class="period"><span>Reporting period</span><strong id="periodLabel">2011–2014</strong></div>
+      <nav class="nav" aria-label="Dashboard pages"><button data-page="overview" class="active" aria-pressed="true">Executive Overview</button><button data-page="diagnostics" aria-pressed="false">Profitability Diagnostics</button><button data-page="discount" aria-pressed="false">Discount Intelligence</button></nav>
+    </header>
+    <section class="filterbar">
+      <label>Date <select id="dateFilter"><option value="all">All periods</option></select></label>
+      <label>Market <select id="marketFilter"><option value="all">All markets</option></select></label>
+      <label>Category <select id="categoryFilter"><option value="all">All categories</option></select></label>
+      <label>Sub-category <select id="subcatFilter"><option value="all">All sub-categories</option></select></label>
+      <button id="resetFilters" class="reset">↻ Reset filters</button>
+    </section>
+    <section id="loading" class="loading">Loading verified Global Superstore data…</section>
+    <section id="dashboard" hidden>
+      <div id="overview" class="page active-page"></div>
+      <div id="diagnostics" class="page"></div>
+      <div id="discount" class="page"></div>
+    </section>
+  </main>
+  <script src="app.js?v=20261029"></script>
+</body>
+</html>
