@@ -1,0 +1,15 @@
+{
+  "name": "InvoiceFlow - local exception workflow",
+  "notes": "Blueprint only. Connect these stages in a local n8n instance.",
+  "stages": [
+    "Manual or folder trigger",
+    "Read invoice PDF",
+    "Execute Python extraction and validation",
+    "Store result in SQLite",
+    "Route standard invoices or exceptions",
+    "Ask local Ollama for explanation",
+    "Write audit log"
+  ],
+  "human_in_the_loop": true,
+  "paid_services": false
+}

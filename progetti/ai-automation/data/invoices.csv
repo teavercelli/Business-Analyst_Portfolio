@@ -1,0 +1,6 @@
+invoice_id,supplier,invoice_number,total,purchase_order,received_quantity,ordered_quantity,vat,confidence
+INV-1048,Northstar Office Ltd,NO-8841,2480.00,PO-3001,20,20,0.22,0.99
+INV-1051,TransitWorks Srl,TW-5507,8940.00,PO-3002,12,10,0.22,0.96
+INV-1054,Brightline Components,BC-2100,1120.00,PO-3003,8,8,0.22,0.98
+INV-1057,Urban Pantry Co,UP-7710,640.50,,15,15,0.10,0.94
+INV-1060,Cloudline Services,CL-1092,4210.00,PO-3005,1,1,,0.62
