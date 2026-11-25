@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Superstore Dashboard | Tea Vercelli</title>
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../../assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Global Superstore Dashboard | Tea Vercelli" />
+  <meta property="og:description" content="Interactive dashboard of sales, profit and discounts in the public Global Superstore dataset, 2011–2014." />
+  <meta property="og:url" content="https://business-analyst-portfolio-tea.vercel.app/projects/global-superstore/dashboard/" />
+  <meta property="og:image" content="https://business-analyst-portfolio-tea.vercel.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+<meta name="description" content="Interactive dashboard of sales, profit and discounts in the public Global Superstore dataset, 2011–2014.">
+<link rel="stylesheet" href="../../../assets/app.css?v=20261125d">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to dashboard</a>
+<nav class="sitebar" aria-label="Portfolio">
+  <div class="sitebar-in"><a class="back" href="../">← Back to case study</a><a class="home" href="../../../">TEA VERCELLI</a></div>
+</nav>
+<header class="appbar">
+  <div class="appbar-in">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">$</span>
+      <div>
+        <h1>Global Superstore: profit and discounts</h1>
+        <p>Sales, profit and margin by market, category and discount level · 2011–2014</p>
+      </div>
+    </div>
+    <span class="badge">Public training dataset</span>
+  </div>
+</header>
+
+<main id="main" class="shell">
+  <div class="tabs seg" role="tablist" aria-label="Dashboard views">
+    <button type="button" role="tab" data-view="overview" aria-selected="true" aria-pressed="true">Overview</button>
+    <button type="button" role="tab" data-view="profit" aria-selected="false" aria-pressed="false">Profitability</button>
+    <button type="button" role="tab" data-view="discount" aria-selected="false" aria-pressed="false">Discounts</button>
+  </div>
+
+  <section class="filters" aria-label="Filters">
+    <label>Year <select id="fYear"><option value="all">2011–2014</option></select></label>
+    <label>Market <select id="fMarket"><option value="all">All markets</option></select></label>
+    <label>Category <select id="fCategory"><option value="all">All categories</option></select></label>
+    <label>Sub-category <select id="fSub"><option value="all">All sub-categories</option></select></label>
+    <button type="button" id="fReset" class="btn-ghost">Reset filters</button>
+    <p class="count" id="count" aria-live="polite"></p>
+  </section>
+
+  <p id="loading" class="loading">Loading Global Superstore data…</p>
+
+  <div id="dash" hidden>
+    <section class="kpis" id="kpis" aria-label="Key measures for the current filters"></section>
+
+    <div class="grid view" id="v-overview">
+      <article class="card span-7">
+        <header class="card-h"><div><h2>Sales and margin by year</h2><p class="sub">Bars: sales · labels: profit margin</p></div></header>
+        <div id="cYear" class="chart"></div>
+      </article>
+      <article class="card span-5">
+        <header class="card-h"><div><h2>Profit by market</h2><p class="sub">Total profit, sorted from highest to lowest</p></div></header>
+        <div id="cMarket" class="chart"></div>
+      </article>
+      <article class="card span-12">
+        <header class="card-h"><div><h2>Profit by category</h2><p class="sub">Sales, profit and margin for each product category</p></div></header>
+        <div id="cCategory" class="chart"></div>
+      </article>
+    </div>
+
+    <div class="grid view" id="v-profit" hidden>
+      <article class="card span-12">
+        <header class="card-h"><div><h2>Profit by sub-category</h2><p class="sub">All sub-categories in the current filters · <span class="neg-key">red = loss</span></p></div></header>
+        <div id="cSub" class="chart"></div>
+      </article>
+      <article class="card span-12">
+        <header class="card-h"><div><h2>Sub-category detail</h2><p class="sub">Sorted by profit, lowest first</p></div></header>
+        <div class="table-wrap"><table class="table" id="tSub"></table></div>
+      </article>
+    </div>
+
+    <div class="grid view" id="v-discount" hidden>
+      <article class="card span-6">
+        <header class="card-h"><div><h2>Margin by discount level</h2><p class="sub">Profit as a share of sales, by discount on the order line</p></div></header>
+        <div id="cBand" class="chart"></div>
+      </article>
+      <article class="card span-6">
+        <header class="card-h"><div><h2>Share of sales by discount level</h2><p class="sub">How much of the revenue is sold at each discount</p></div></header>
+        <div id="cBandSales" class="chart"></div>
+      </article>
+      <article class="card span-12">
+        <header class="card-h"><div><h2>Margin by market and discount level</h2><p class="sub">Blue = profitable, red = loss-making · empty cells have no sales</p></div></header>
+        <div id="cHeat" class="chart"></div>
+      </article>
+      <article class="card span-12">
+        <header class="card-h"><div><h2>Tables at 30% discount or more</h2><p class="sub">The pilot proposed in the case study, by market (ignores the category and sub-category filters)</p></div></header>
+        <div class="table-wrap"><table class="table" id="tTables"></table></div>
+      </article>
+    </div>
+
+    <p class="source">Source: Global Superstore, a public retail dataset used in Tableau training and shared on Kaggle (51,290 order lines). Figures are computed in the browser from <code>data/summary.json</code>, an aggregate of the cleaned CSV.</p>
+  </div>
+</main>
+<div id="tip" class="tip" hidden></div>
+<script src="app.js?v=20261125"></script>
+</body>
+</html>

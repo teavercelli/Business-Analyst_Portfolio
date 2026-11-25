@@ -2,7 +2,7 @@
 version: 1
 slug: "index-html"
 primary_target: "index.html"
-related_targets: ["progetti/global-superstore/index.html"]
+related_targets: ["projects/global-superstore/index.html"]
 ---
 
 Scope: Experience portfolio homepage and Global Superstore case study. Audience: recruiters reviewing a Business Analyst application. The task is to understand Tea's background, inspect evidence of work, and contact or download her CV. Proof: verified CV, supplied portrait, existing dashboard, CSV and separate SQL script. Future project pages remain explicitly in preparation.

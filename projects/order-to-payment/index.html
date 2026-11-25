@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="From Order to Payment: an end-to-end business analysis of a supplier payables process, with stakeholders, AS-IS/TO-BE process maps, requirements, user stories, KPIs and a before/after dashboard." />
+  <title>From Order to Payment | Tea Vercelli</title>
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="From Order to Payment | Tea Vercelli" />
+  <meta property="og:description" content="From Order to Payment: an end-to-end business analysis of a supplier payables process, with stakeholders, AS-IS/TO-BE process maps, requirements, user stories, KPIs and a before/after dashboard." />
+  <meta property="og:url" content="https://business-analyst-portfolio-tea.vercel.app/projects/order-to-payment/" />
+  <meta property="og:image" content="https://business-analyst-portfolio-tea.vercel.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="../../style.css?v=20261125" />
+  <link rel="stylesheet" href="o2p.css?v=20261125" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><a class="wordmark" href="../../index.html">TEA VERCELLI</a><nav aria-label="Main navigation"><a href="../../projects/index.html" aria-current="page">Projects</a><a href="../../index.html#profile">Profile</a><a href="../../index.html#skills">Skills</a><a href="../../index.html#contact">Contact</a></nav><a class="header-cv" href="../../assets/CV-Tea-Vercelli-English.pdf">CV <span aria-hidden="true">↗</span></a></header>
+  <main id="main" class="subpage-main o2p-page">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html">Projects</a><span aria-hidden="true">/</span><span>From Order to Payment</span></nav>
+
+    <header class="case-page-header o2p-hero">
+      <p class="eyebrow">BUSINESS ANALYSIS · PROCESS REDESIGN · REQUIREMENTS</p>
+      <h1>From Order to Payment<span>.</span></h1>
+      <p class="case-page-summary">An end-to-end analysis of how a fictional mid-sized meat processor receives, checks, approves and pays supplier invoices, and a redesigned process built to pay correct invoices on time and stop duplicates before payment.</p>
+      <div class="case-page-links"><a class="button" href="dashboard/">Open the dashboard <span>↗</span></a><a class="plain-link" href="#process">See the process maps ↘</a><a class="plain-link" href="prototype/">Try the prototype ↗</a></div>
+    </header>
+
+    <section class="case-metrics o2p-metrics" aria-label="Project scope"><div><span>SCOPE</span><strong>7 process steps · 7 stakeholders</strong></div><div><span>DELIVERABLES</span><strong>BPMN · requirements · prototype</strong></div><div><span>DATA</span><strong>1,121 fictional invoices</strong></div></section>
+
+    <nav class="case-toc" aria-label="On this page"><span>On this page</span><a href="#context">Context</a><a href="#objectives">Objectives</a><a href="#stakeholders">Stakeholders</a><a href="#process">Process</a><a href="#requirements">Requirements</a><a href="#stories">User stories</a><a href="#kpis">KPIs</a><a href="#dashboard">Dashboard</a><a href="#prototype">Prototype</a><a href="#limits">Limits</a></nav>
+
+    <section class="case-section" id="context"><div class="case-section-label"><span>01</span><span>CONTEXT</span></div><div>
+      <h2>A food company where paying late is a compliance problem.</h2>
+      <p>The case is set in a fictional Italian meat processor that supplies large retail chains. It works with about 25 suppliers (livestock, fresh meat, feed, packaging, logistics and services) and receives around 100 supplier invoices a month.</p>
+      <ul class="case-facts">
+        <li><strong>Perishable goods</strong><span>Italian Legislative Decree 198/2021 treats payment beyond 30 days for perishable agri-food products (60 days for other agri-food products) as an unfair commercial practice.</span></li>
+        <li><strong>E-invoicing</strong><span>Since 2019, B2B invoices in Italy arrive as XML through the SDI exchange system; some suppliers also send PDF copies.</span></li>
+        <li><strong>Scope</strong><span>From purchase order to payment and supplier communication. Supplier selection, accounting entries and bank integration are out of scope.</span></li>
+      </ul>
+      <p class="caution-note small-print">Fictional company, process and data. The AS-IS describes a typical order-to-payment process, not a documented process of a real company. The topic is inspired by my summer internships at Gruppo Vercelli, a veal supply-chain company, where I monitored invoices, payments and deadlines.</p>
+    </div></section>
+
+    <section class="case-section" id="objectives"><div class="case-section-label"><span>02</span><span>OBJECTIVES</span></div><div>
+      <h2>Pay correct invoices on time, and stop duplicates before payment.</h2>
+      <p class="lead-copy">Today invoices are matched to orders and delivery notes by hand, approvals wait in email inboxes and due dates live in a spreadsheet. The company cannot see what it owes and when, some fresh-meat invoices are paid late, and suppliers call to ask about payment status.</p>
+      <ol class="objective-list">
+        <li><b>On time</b><span>Pay correct invoices by their due date, and perishable invoices within 30 days.</span></li>
+        <li><b>In control</b><span>Catch price, quantity and duplicate errors before payment, not after.</span></li>
+        <li><b>Visible</b><span>Give finance a weekly view of upcoming payments and the cash they require.</span></li>
+        <li><b>Measured</b><span>Track cycle time, on-time rate and exceptions so problems surface early.</span></li>
+      </ol>
+    </div></section>
+
+    <section class="case-section" id="stakeholders"><div class="case-section-label"><span>03</span><span>STAKEHOLDERS</span></div><div>
+      <h2>Seven groups, one shared invoice.</h2>
+      <div class="table-scroll"><table class="o2p-table">
+        <thead><tr><th scope="col">Stakeholder</th><th scope="col">Needs</th><th scope="col">Pain today</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Purchasing manager</th><td>Know whether invoices match what was ordered</td><td>Hears about discrepancies days later, by email</td></tr>
+          <tr><th scope="row">Warehouse / quality</th><td>A quick way to record weight and quality differences</td><td>Notes on paper delivery notes get lost</td></tr>
+          <tr><th scope="row">Accounts payable clerk</th><td>Order, receipt and invoice in one place</td><td>Manual matching, chasing approvals, supplier calls</td></tr>
+          <tr><th scope="row">Finance manager</th><td>A weekly view of what is due and the cash needed</td><td>No reliable forecast of upcoming payments</td></tr>
+          <tr><th scope="row">General management</th><td>No late payments on perishable goods</td><td>Learns about problems from suppliers</td></tr>
+          <tr><th scope="row">Suppliers</th><td>Be paid on time and know the status</td><td>Have to call to find out when they will be paid</td></tr>
+          <tr><th scope="row">IT / ERP owner</th><td>Changes that fit the existing ERP</td><td>Requests arrive without clear requirements</td></tr>
+        </tbody>
+      </table></div>
+      <h3 class="o2p-h3">RACI for the redesigned process</h3>
+      <div class="table-scroll"><table class="o2p-table raci">
+        <thead><tr><th scope="col">Activity</th><th scope="col">Purch.</th><th scope="col">Wareh.</th><th scope="col">AP</th><th scope="col">Finance</th><th scope="col">Mgmt</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Record purchase order</th><td><b>R/A</b></td><td>I</td><td>I</td><td></td><td></td></tr>
+          <tr><th scope="row">Record goods receipt</th><td>I</td><td><b>R/A</b></td><td>I</td><td></td><td></td></tr>
+          <tr><th scope="row">Three-way match and exceptions</th><td>C</td><td>C</td><td><b>R</b></td><td><b>A</b></td><td></td></tr>
+          <tr><th scope="row">Approve invoice</th><td><b>R</b> ≤ €5k</td><td></td><td>I</td><td><b>A</b> &gt; €5k</td><td></td></tr>
+          <tr><th scope="row">Weekly payment proposal</th><td></td><td></td><td><b>R</b></td><td><b>A</b></td><td>I</td></tr>
+          <tr><th scope="row">KPI review</th><td>C</td><td>C</td><td>C</td><td><b>R</b></td><td><b>A</b></td></tr>
+        </tbody>
+      </table></div>
+      <p>R responsible · A accountable · C consulted · I informed</p>
+    </div></section>
+
+    <section class="case-section o2p-wide" id="process"><div class="case-section-label"><span>04</span><span>PROCESS</span></div><div>
+      <h2>AS-IS and TO-BE, step by step.</h2>
+      <p class="lead-copy">Both maps use BPMN notation with one lane per role. Switch between them and select a highlighted step to see the problem it causes today, or how the redesign fixes it.</p>
+      <div class="bpmn-toolbar">
+        <div class="seg" role="group" aria-label="Process view"><button type="button" data-view="asis" aria-pressed="true">AS-IS</button><button type="button" data-view="tobe" aria-pressed="false">TO-BE</button></div>
+        <span class="bpmn-hint" id="bpmn-hint">8 pain points highlighted</span><span class="bpmn-scroll">Scroll the map sideways →</span>
+      </div>
+      <div class="bpmn-wrap" id="bpmn" tabindex="0" aria-label="Process diagram, scrolls horizontally"></div>
+      <aside class="bpmn-detail" id="bpmn-detail" aria-live="polite"><strong>Select a numbered step.</strong></aside>
+      <h3 class="o2p-h3">Gap analysis</h3>
+      <div class="table-scroll"><table class="o2p-table">
+        <thead><tr><th scope="col">Area</th><th scope="col">AS-IS</th><th scope="col">TO-BE</th><th scope="col">Change needed</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Data</th><td>Spreadsheets and paper</td><td>ERP records for order, receipt and invoice</td><td>ERP purchase module, tablet at the warehouse</td></tr>
+          <tr><th scope="row">Control</th><td>Manual comparison</td><td>Rule-based match with tolerances</td><td>Agree tolerance rules with finance</td></tr>
+          <tr><th scope="row">Ownership</th><td>Implicit</td><td>RACI, thresholds and SLA</td><td>Approval policy signed off</td></tr>
+          <tr><th scope="row">Planning</th><td>Weekly list built from memory</td><td>Payment calendar and cash forecast</td><td>Payment terms stored per supplier</td></tr>
+          <tr><th scope="row">Communication</th><td>Phone and email</td><td>Automatic notifications</td><td>Clean supplier contact data</td></tr>
+        </tbody>
+      </table></div>
+    </div></section>
+
+    <section class="case-section o2p-wide" id="requirements"><div class="case-section-label"><span>05</span><span>REQUIREMENTS</span></div><div>
+      <h2>What the solution must do.</h2>
+      <p class="lead-copy">Sixteen functional requirements, prioritised with MoSCoW and traced to the pain points (P1–P8) they address, plus five non-functional requirements.</p>
+      <div class="moscow" id="moscow"></div>
+      <h3 class="o2p-h3">Non-functional requirements</h3>
+      <ul class="case-facts">
+        <li><strong>Audit trail</strong><span>Every approval and payment decision is logged with user and timestamp.</span></li>
+        <li><strong>Human in control</strong><span>No invoice is paid without a human approval.</span></li>
+        <li><strong>Access</strong><span>Role-based access: warehouse users cannot see payment data.</span></li>
+        <li><strong>Usability</strong><span>A goods receipt takes less than one minute to record on a tablet.</span></li>
+        <li><strong>Freshness</strong><span>Dashboard data is refreshed at least daily.</span></li>
+      </ul>
+    </div></section>
+
+    <section class="case-section" id="stories"><div class="case-section-label"><span>06</span><span>USER STORIES</span></div><div>
+      <h2>Ten stories in four epics.</h2>
+      <p class="lead-copy">Open a story to read its acceptance criteria.</p>
+      <div class="stories" id="stories"></div>
+    </div></section>
+
+    <section class="case-section" id="kpis"><div class="case-section-label"><span>07</span><span>KPIs</span></div><div>
+      <h2>How success is measured.</h2>
+      <div class="table-scroll"><table class="o2p-table">
+        <thead><tr><th scope="col">KPI</th><th scope="col">Formula</th><th scope="col">Target</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Median approval time</th><td>median(approval date − receipt date), in days</td><td>≤ 5 days</td></tr>
+          <tr><th scope="row">Paid on time</th><td>paid on or before due date ÷ paid</td><td>≥ 95%</td></tr>
+          <tr><th scope="row">Fresh meat paid ≤ 30 days</th><td>perishable paid within 30 days ÷ perishable paid</td><td>100%</td></tr>
+          <tr><th scope="row">First-time match rate</th><td>matched with no manual step ÷ received</td><td>≥ 70%</td></tr>
+          <tr><th scope="row">Approval SLA compliance</th><td>approved within 3 working days ÷ approved</td><td>≥ 90%</td></tr>
+          <tr><th scope="row">Exception mix</th><td>exceptions by reason ÷ all exceptions</td><td>monitor</td></tr>
+          <tr><th scope="row">Duplicate invoices paid</th><td>count of invoices paid twice</td><td>0</td></tr>
+          <tr><th scope="row">Overdue payables</th><td>sum of unpaid invoices past due</td><td>trend to 0</td></tr>
+        </tbody>
+      </table></div>
+      <p>Targets are proposals to discuss with finance, not measured results.</p>
+    </div></section>
+
+    <section class="case-section o2p-wide" id="dashboard"><div class="case-section-label"><span>08</span><span>DASHBOARD</span></div><div>
+      <h2>The same invoices, before and after.</h2>
+      <p class="lead-copy">I generated 1,121 fictional invoices for 2025 with Python and ran each one through two simulated processes: the manual AS-IS and the redesigned TO-BE. Invoices, amounts and exceptions are identical in both; only the process rules change.</p>
+      <div class="sim-kpis" aria-label="Simulated results, AS-IS to TO-BE">
+        <div><span>Median approval time</span><strong>15 → 3 days</strong></div>
+        <div><span>Paid on time</span><strong>94% → 99.8%</strong></div>
+        <div><span>Fresh meat paid ≤ 30 days</span><strong>82% → 99.4%</strong></div>
+        <div><span>Duplicate invoices paid</span><strong>23 → 4</strong></div>
+      </div>
+      <a class="dash-preview" href="dashboard/"><img src="dashboard-preview.png" alt="Order-to-Payment dashboard comparing AS-IS and TO-BE: KPI cards, monthly on-time rate, process controls, fresh-meat payment histogram, exception reasons and supplier table." loading="lazy" width="1280" height="1630" /><span>Open the interactive dashboard ↗</span></a>
+      <p>The TO-BE does not reach 100%, on purpose: some invoices still wait on real disputes with suppliers, some approvals still miss the 3-day SLA, and a duplicate sent with a new invoice number can pass the match (the simulation assumes 90% are blocked).</p>
+      <p class="caution-note">Simulated on fictional data. The scenario rules (matching time, approval delays, payment runs) are stated assumptions, listed in the dashboard and the dataset README. They show the mechanism of the redesign, not a measured saving.</p>
+    </div></section>
+
+    <section class="case-section o2p-wide" id="prototype"><div class="case-section-label"><span>09</span><span>PROTOTYPE</span></div><div>
+      <h2>What the approver would see.</h2>
+      <p class="lead-copy">A clickable front-end of two TO-BE screens, built from the user stories. The approval inbox routes invoices by amount, shows the three-way match and flags SLA and perishable deadlines. The payment calendar groups approved invoices into Friday runs with the cash each one needs. Approving an invoice moves it into the calendar and writes to an audit log.</p>
+      <a class="dash-preview" href="prototype/"><img src="prototype-preview.png" alt="Payables Workspace prototype: approval inbox with SLA and perishable tags, and the three-way match of the selected invoice." loading="lazy" width="1280" height="820" /><span>Try the prototype ↗</span></a>
+      <ul class="case-facts">
+        <li><strong>Covers</strong><span>US-06 approval threshold, US-07 SLA reminder, US-08 perishable flag, US-09 weekly payment proposal, US-10 supplier notice, NFR-01 audit trail.</span></li>
+        <li><strong>Not covered</strong><span>Goods receipt and the exception queue (InvoiceFlow shows a version of the queue). No back end: data is fictional and resets on reload.</span></li>
+      </ul>
+    </div></section>
+
+    <section class="case-section" id="links"><div class="case-section-label"><span>10</span><span>LINKS</span></div><div>
+      <h2>How this connects to InvoiceFlow.</h2>
+      <p class="lead-copy">In the TO-BE, PDF-only invoices pass an intake check before the three-way match. That single step is what my <a href="../invoiceflow/">InvoiceFlow</a> prototype automates. This case looks at the whole process around it.</p>
+      <div class="stack-list"><span>BPMN</span><span>MoSCoW</span><span>User stories</span><span>Python</span><span>HTML / CSS / JS</span><span>CSV</span></div>
+      <ul class="resource-links">
+        <li><a href="dashboard/">Interactive dashboard ↗</a></li>
+        <li><a href="prototype/">Clickable prototype ↗</a></li>
+        <li><a href="https://github.com/teavercelli/Business-Analyst_Portfolio/blob/main/projects/order-to-payment/data/README.md" target="_blank" rel="noopener noreferrer">Dataset README and data dictionary ↗</a></li>
+        <li><a href="https://github.com/teavercelli/Business-Analyst_Portfolio/blob/main/projects/order-to-payment/data/generate_dataset.py" target="_blank" rel="noopener noreferrer">Dataset generator (Python) ↗</a></li>
+      </ul>
+    </div></section>
+
+    <section class="case-section" id="limits"><div class="case-section-label"><span>11</span><span>LIMITS</span></div><div>
+      <h2>What this case does not prove.</h2>
+      <ul class="case-facts">
+        <li><strong>No real data</strong><span>Results come from a simulation with stated assumptions, not from a company.</span></li>
+        <li><strong>Not validated</strong><span>Requirements and targets would need to be checked in interviews with finance, purchasing and the warehouse.</span></li>
+        <li><strong>Next steps</strong><span>Validate the AS-IS with users, estimate the ERP change effort, and pilot the three-way match on one supplier category.</span></li>
+      </ul>
+    </div></section>
+
+    <a class="project-link" href="../index.html">← Back to projects</a>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="../../index.html">TEA VERCELLI</a><span>Professional portfolio · <span data-current-year>2026</span></span><a href="../index.html">All projects ↗</a></footer>
+  <script src="../../script.js"></script><script src="o2p.js?v=20261125"></script>
+</body>
+</html>

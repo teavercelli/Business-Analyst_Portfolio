@@ -318,7 +318,7 @@ main { width: min(1120px, 90%); margin: 0 auto; }
 }
 
 body { background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.6; }
-.site-header { min-height: 76px; border-bottom-color: var(--line); background: rgba(251,251,250,.96); }
+.site-header { min-height: 76px; border-bottom-color: var(--line); background: var(--paper); }
 .wordmark { font-size: 14px; letter-spacing: -.02em; }
 .site-header nav { gap: 32px; }
 .site-header nav a, .header-cv { font-size: 13px; letter-spacing: 0; }
@@ -376,3 +376,38 @@ main { width: min(1160px, 88%); }
 	.project-list-item { min-height: 68px; }
 	.list-title { font-size: 17px; }
 }
+
+/* Profile: experience + contact */
+.sub-heading { grid-column: 1 / -1; margin: 26px 0 0; color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.experience-list { grid-column: 1 / -1; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.experience-list li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.experience-list li > span { color: var(--navy); font-size: 12px; font-weight: 700; padding-top: 2px; }
+.experience-list strong { display: block; color: var(--navy); font-size: 15px; line-height: 1.35; }
+.experience-list small { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+.experience-list p { margin: 6px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.profile-copy .education-list { margin-top: 0; }
+.skill-group li em { color: var(--muted); font-style: normal; font-size: .92em; }
+.contact-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; align-self: center; }
+.contact-cta .button { position: static; min-height: 48px; padding: 0 22px; font-size: 14px; }
+.contact-cta .plain-link { font-size: 14px; display: inline-flex; min-height: 44px; align-items: center; }
+@media (max-width: 600px) {
+	.home-intro { grid-template-columns: 1fr; align-items: start; }
+	.intro-copy { min-width: 0; }
+	.intro-copy h1 { font-size: clamp(46px, 14vw, 64px); overflow-wrap: anywhere; }
+	.experience-list li { grid-template-columns: 1fr; gap: 4px; }
+	.contact-cta { flex-direction: column; align-items: flex-start; gap: 6px; }
+	.contact-cta .button { max-width: 100%; }
+	.project-feature, .archive-feature { grid-template-columns: 1fr; gap: 20px; }
+	.skills-section > .section-heading { display: block; }
+	.text-columns { grid-template-columns: 1fr; }
+	.text-columns p { font-size: 15px; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+	.project-feature, .archive-feature { grid-template-columns: 1fr; }
+}
+.profile-copy p { font-size: 15px; }
+@media (max-width: 600px) {
+	.project-preview { height: auto; min-height: 240px; padding-bottom: 76px; }
+	.archive-preview.invoice-archive-preview { height: auto; }
+}
+.projects-home .project-feature:last-of-type { border-bottom: 0; }
