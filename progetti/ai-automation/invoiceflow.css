@@ -34,3 +34,6 @@
 .resource-links a { color: var(--navy); text-underline-offset: 4px; }
 @media (max-width: 700px) { .flow-steps { grid-template-columns: 1fr 1fr; } .invoice-toolbar { align-items: flex-start; flex-direction: column; } .detail-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .flow-steps { grid-template-columns: 1fr; } .detail-grid { grid-template-columns: 1fr; } }
+
+/* Let the demo table scroll inside its section on narrow screens */
+.invoice-page .case-section > div { min-width: 0; }
