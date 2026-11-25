@@ -6,14 +6,22 @@
   <meta name="description" content="Tea Vercelli's professional portfolio: business analysis, open innovation and selected project work." />
   <meta name="theme-color" content="#F7F5F0" />
   <title>Tea Vercelli | Business Analyst</title>
-	<link rel="stylesheet" href="style.css?v=20261104a" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tea Vercelli | Business Analyst" />
+  <meta property="og:description" content="Tea Vercelli's professional portfolio: business analysis, open innovation and selected project work." />
+  <meta property="og:url" content="https://business-analyst-portfolio-tea.vercel.app/" />
+  <meta property="og:image" content="https://business-analyst-portfolio-tea.vercel.app/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+	<link rel="stylesheet" href="style.css?v=20261125" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="index.html">TEA VERCELLI</a>
     <nav aria-label="Main navigation">
-      <a href="progetti/">Projects</a>
+      <a href="projects/">Projects</a>
       <a href="#profile">Profile</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -31,8 +39,8 @@
       <div class="intro-copy">
         <h1 id="person-name">Tea Vercelli</h1>
         <p class="professional-title">Business Analyst | Open Innovation | Business &amp; Process Analysis</p>
-        <p class="personal-summary">I’m from Turin and now work in Spain as an Open Innovation Service Consultant Intern at Plug and Play Tech Center. I studied Business and Management at SAA, University of Turin, then continued my education in Valencia. I’m interested in business analysis, market research, process improvement, reporting and practical uses of data and technology.</p>
-        <div class="contact-inline" id="contact" aria-label="Contact details and professional profiles">
+        <p class="personal-summary">Business and Management graduate from Turin, now in Valencia. I analyse how processes work today, write down what should change, and back it with requirements, KPIs, dashboards and working prototypes.</p>
+        <div class="contact-inline" aria-label="Contact details and professional profiles">
           <a href="mailto:teavercelli@gmail.com">Email <span>teavercelli@gmail.com</span></a>
           <a href="https://www.linkedin.com/in/tea-vercelli-aa11672b8/" target="_blank" rel="noopener noreferrer">LinkedIn <span>View profile ↗</span></a>
           <a href="https://github.com/teavercelli" target="_blank" rel="noopener noreferrer">GitHub <span>teavercelli ↗</span></a>
@@ -44,10 +52,17 @@
     <section class="content-section profile-section" id="profile" aria-labelledby="profile-title">
       <div class="section-heading"><div><h2 id="profile-title">Profile</h2></div></div>
       <div class="text-columns profile-copy">
-        <p>I’m currently based in Spain, working as an Open Innovation Service Consultant Intern at Plug and Play Tech Center. I support corporate innovation projects through market and competitor research, startup scouting, stakeholder interviews, workshop coordination, and the preparation of reports and presentations.</p>
-        <p>Earlier roles at Gruppo Vercelli gave me experience with operational and administrative processes, documentation, reporting, and coordination across teams. I’m interested in analysing business problems and continue to develop practical data and digital skills through project work.</p>
+        <p>I work at the point where business questions meet processes and data: interviewing stakeholders, mapping what happens today, and turning it into requirements and measures that a team can act on.</p>
+        <p>My operational background comes from summer roles in invoice, payment and deadline monitoring; my current work is in corporate innovation, where I support research, process assessments and workshops for large companies.</p>
+        <h3 class="sub-heading">Experience</h3>
+        <ol class="experience-list" aria-label="Experience">
+          <li><span>Feb 2026 – present</span><div><strong>Open Innovation Service Consultant (Intern)</strong><small>Plug and Play Tech Center · Valencia</small><p>Supported 5 corporate innovation projects: market and competitor research, startup scouting, stakeholder interviews, AS-IS / TO-BE and target operating model work, workshops and management presentations.</p></div></li>
+          <li><span>Nov – Dec 2024</span><div><strong>Intern</strong><small>Logos Net · Italy</small><p>Supported the integration of AI and extended reality in educational and cultural projects.</p></div></li>
+          <li><span>Summers 2019 – 2024</span><div><strong>Business Operations &amp; Process Support Assistant</strong><small>Gruppo Vercelli SpA · veal supply chain for large retail, Italy</small><p>Monitored invoices, payments, costs and deadlines, prepared operational reports and coordinated information between internal and external stakeholders.</p></div></li>
+        </ol>
+        <h3 class="sub-heading">Education</h3>
         <div class="education-list" aria-label="Education">
-          <div><span>2025–2026</span><strong>International Junior MBA</strong><small>EDEM Business School, Valencia</small></div>
+          <div><span>2025–2026</span><strong>International Junior MBA · final grade 8.8/10</strong><small>EDEM Business School, Valencia</small></div>
           <div><span>2022–2025</span><strong>BSc in Business and Management · 110/110 cum laude</strong><small>School of Management of SAA, University of Turin</small></div>
           <div><span>2025</span><strong>Erasmus exchange</strong><small>University of Valencia</small></div>
         </div>
@@ -57,36 +72,36 @@
     <section class="projects-home" id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
         <div><h2 id="projects-title">Projects</h2></div>
-        <a class="all-projects-link" href="progetti/">All projects <span aria-hidden="true">↗</span></a>
+        <a class="all-projects-link" href="projects/">All projects <span aria-hidden="true">↗</span></a>
       </div>
       <article class="project-feature">
         <div class="project-preview" aria-label="Static preview of the Order-to-Payment case results">
-          <div class="preview-toolbar"><strong>From Order to Payment</strong><span>AS-IS → TO-BE · simulated</span></div>
+          <div class="preview-toolbar"><strong>From Order to Payment</strong><span>AS-IS → TO-BE · simulated data</span></div>
           <div class="preview-kpis">
-            <div><span>Approval time</span><strong>19 → 4 d</strong></div>
-            <div><span>Paid on time</span><strong>92 → 99.8%</strong></div>
-            <div><span>Duplicates paid</span><strong>21 → 2</strong></div>
+            <div><span>Median approval time</span><strong>15 → 3 d</strong></div>
+            <div><span>Paid on time</span><strong>94 → 99.8%</strong></div>
+            <div><span>Duplicate invoices paid</span><strong>23 → 4</strong></div>
           </div>
-          <div class="preview-chart" role="img" aria-label="Fresh meat invoices paid within the 30-day legal limit: AS-IS 77%, TO-BE 99%">
+          <div class="preview-chart" role="img" aria-label="Fresh meat invoices paid within the 30-day legal limit: AS-IS 82%, TO-BE 99.4%">
             <h4>Fresh meat paid within 30 days</h4>
-            <div class="preview-bar-row"><span>AS-IS</span><span class="preview-track"><span style="width:77%"></span></span><strong>77%</strong></div>
-            <div class="preview-bar-row"><span>TO-BE</span><span class="preview-track"><span style="width:99%"></span></span><strong>99%</strong></div>
+            <div class="preview-bar-row"><span>AS-IS</span><span class="preview-track"><span style="width:82%"></span></span><strong>82%</strong></div>
+            <div class="preview-bar-row"><span>TO-BE</span><span class="preview-track"><span style="width:99.4%"></span></span><strong>99.4%</strong></div>
           </div>
-          <a class="preview-link" href="progetti/order-to-payment/prototype/">Open prototype <span aria-hidden="true">↗</span></a>
+          <a class="preview-link" href="projects/order-to-payment/prototype/">Open prototype <span aria-hidden="true">↗</span></a>
         </div>
         <div class="project-info">
           <div class="project-meta"><span>01</span><span>BUSINESS ANALYSIS · PROCESS REDESIGN</span></div>
-          <h3><a href="progetti/order-to-payment/">From Order to Payment</a></h3>
-          <p>An end-to-end analysis of a supplier payables process in a fictional food company: stakeholders, AS-IS and TO-BE process maps, MoSCoW requirements, user stories, KPIs, a before/after dashboard and a clickable prototype.</p>
+          <h3><a href="projects/order-to-payment/">From Order to Payment</a></h3>
+          <p>An end-to-end analysis of a supplier payables process at a fictional meat processor: stakeholders, AS-IS and TO-BE process maps, MoSCoW requirements, user stories, KPIs, a before/after dashboard and a clickable prototype.</p>
           <ul class="project-tools" aria-label="Tools used"><li>BPMN</li><li>Requirements</li><li>User stories</li><li>Python</li><li>JavaScript</li></ul>
-          <a class="project-link" href="progetti/order-to-payment/">View case study <span aria-hidden="true">↗</span></a>
+          <a class="project-link" href="projects/order-to-payment/">View case study <span aria-hidden="true">↗</span></a>
         </div>
       </article>
       <article class="project-feature">
         <div class="project-preview" aria-label="Static preview of Global Superstore dashboard figures">
           <div class="preview-toolbar"><strong>Global Superstore</strong><span>2011–2014</span></div>
           <div class="preview-kpis">
-            <div><span>Sales</span><strong>$12.64M</strong></div>
+            <div><span>Sales</span><strong>$12.6M</strong></div>
             <div><span>Profit</span><strong>$1.47M</strong></div>
             <div><span>Margin</span><strong>11.61%</strong></div>
           </div>
@@ -96,14 +111,14 @@
             <div class="preview-bar-row"><span>Office supplies</span><span class="preview-track"><span style="width:78.1%"></span></span><strong>$518,474</strong></div>
             <div class="preview-bar-row"><span>Furniture</span><span class="preview-track"><span style="width:43%"></span></span><strong>$285,205</strong></div>
           </div>
-          <a class="preview-link" href="dashboard/index.html">Open dashboard <span aria-hidden="true">↗</span></a>
+          <a class="preview-link" href="projects/global-superstore/dashboard/">Open dashboard <span aria-hidden="true">↗</span></a>
         </div>
         <div class="project-info">
           <div class="project-meta"><span>02</span><span>DATA ANALYSIS · INTERACTIVE DASHBOARD</span></div>
-          <h3><a href="progetti/global-superstore/">Global Superstore Web Dashboard</a></h3>
+          <h3><a href="projects/global-superstore/">Global Superstore Web Dashboard</a></h3>
           <p>An interactive dashboard and SQL analysis of sales, profit and discounts. Lines discounted at 30% or more lose $813K, 55% of total profit, so the case study proposes an approval step for deep discounts and a pilot to test it.</p>
           <ul class="project-tools" aria-label="Tools used"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>SQL analysis</li><li>CSV</li></ul>
-          <a class="project-link" href="progetti/global-superstore/">View case study <span aria-hidden="true">↗</span></a>
+          <a class="project-link" href="projects/global-superstore/">View case study <span aria-hidden="true">↗</span></a>
         </div>
       </article>
       <article class="project-feature invoice-home-feature">
@@ -117,24 +132,33 @@
             <div><span class="flow-node-icon">✓</span><strong>Validate</strong><small>5 required fields</small></div>
           </div>
           <div class="invoice-preview-routes"><span><b>2</b> ready for approval</span><span><b>4</b> sent to review</span></div>
-          <a class="preview-link" href="progetti/ai-automation/">Open InvoiceFlow <span aria-hidden="true">↗</span></a>
+          <a class="preview-link" href="projects/invoiceflow/">Open InvoiceFlow <span aria-hidden="true">↗</span></a>
         </div>
         <div class="project-info">
           <div class="project-meta"><span>03</span><span>OPERATIONS · WORKFLOW AUTOMATION</span></div>
-          <h3><a href="progetti/ai-automation/">InvoiceFlow</a></h3>
-          <p>A local-first n8n workflow that reads invoices, validates required fields and routes exceptions to a human review queue.</p>
-          <ul class="project-tools" aria-label="Tools used"><li>n8n</li><li>PDF extraction</li><li>JavaScript</li><li>Python</li><li>SQLite</li></ul>
-          <a class="project-link" href="progetti/ai-automation/">View case study <span aria-hidden="true">↗</span></a>
+          <h3><a href="projects/invoiceflow/">InvoiceFlow</a></h3>
+          <p>A local n8n workflow that reads supplier invoice PDFs, checks five required fields and routes incomplete ones to human review. Tested on six fictional invoices: two approved, four sent to review.</p>
+          <ul class="project-tools" aria-label="Tools used"><li>n8n</li><li>PDF extraction</li><li>Python</li><li>SQLite</li><li>JavaScript</li></ul>
+          <a class="project-link" href="projects/invoiceflow/">View case study <span aria-hidden="true">↗</span></a>
         </div>
       </article>
     </section>
 
     <section class="content-section skills-section" id="skills" aria-labelledby="skills-title">
-      <div class="section-heading"><div><h2 id="skills-title">Skills and capabilities</h2></div><p class="section-note">A mix of professional experience and practical skills I continue to develop through project work.</p></div>
+      <div class="section-heading"><div><h2 id="skills-title">Skills</h2></div><p class="section-note">Each skill points to where you can see it: a project on this site or a role in my experience.</p></div>
       <div class="skills-groups">
-        <section class="skill-group"><h3>Business Analysis</h3><ul><li>Business and market research</li><li>KPI and performance analysis</li><li>Requirements gathering</li><li>Process analysis and AS-IS / TO-BE</li><li>Business case development</li></ul></section>
-        <section class="skill-group"><h3>Project and Stakeholder Work</h3><ul><li>Stakeholder coordination</li><li>Workshop and interview support</li><li>Report and presentation preparation</li><li>Project coordination</li><li>Communication across teams</li></ul></section>
-        <section class="skill-group"><h3>Data and Digital Work</h3><ul><li>Data-informed reporting and dashboard development</li><li>Excel and Power BI</li><li>Python and SQL: practical skills in development</li><li>HTML, CSS and JavaScript for project development</li><li>Exploring AI-assisted research and workflow automation</li></ul></section>
+        <section class="skill-group"><h3>Business Analysis</h3><ul><li>Requirements gathering, MoSCoW prioritisation and user stories <em>(Order to Payment)</em></li><li>Process mapping in BPMN, AS-IS / TO-BE and gap analysis <em>(Order to Payment, Plug and Play)</em></li><li>KPI definition and performance analysis <em>(all projects)</em></li><li>Business cases, market and competitor research <em>(Plug and Play)</em></li></ul></section>
+        <section class="skill-group"><h3>Stakeholders and Delivery</h3><ul><li>Stakeholder interviews and workshops <em>(Plug and Play)</em></li><li>Reports and management presentations <em>(Plug and Play)</em></li><li>Coordination across internal and external teams <em>(Gruppo Vercelli)</em></li><li>Project coordination and innovation sprints <em>(Plug and Play)</em></li></ul></section>
+        <section class="skill-group"><h3>Data and Tools</h3><ul><li>SQL for data checks and analysis <em>(Global Superstore)</em></li><li>Python for data simulation and business rules <em>(Order to Payment, InvoiceFlow)</em></li><li>HTML, CSS and JavaScript dashboards and prototypes <em>(this site)</em></li><li>n8n workflow automation <em>(InvoiceFlow)</em></li><li>Excel and Power BI reporting <em>(Plug and Play)</em></li><li>HubSpot CRM, Stata, Microsoft Office</li></ul></section>
+      </div>
+    </section>
+    <section class="content-section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading"><div><h2 id="contact-title">Let’s talk</h2></div><p class="section-note">I’m looking for Business Analyst roles. The quickest way to reach me is email.</p></div>
+      <div class="contact-cta">
+        <a class="button" href="mailto:teavercelli@gmail.com">teavercelli@gmail.com <span aria-hidden="true">↗</span></a>
+        <a class="plain-link" href="https://www.linkedin.com/in/tea-vercelli-aa11672b8/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="plain-link" href="https://github.com/teavercelli" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="plain-link" href="assets/CV-Tea-Vercelli-English.pdf">CV (PDF) ↓</a>
       </div>
     </section>
   </main>

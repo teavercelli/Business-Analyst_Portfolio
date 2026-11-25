@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/progetti/ai-automation", "destination": "/projects/invoiceflow/", "permanent": true },
+    { "source": "/progetti/ai-automation/:path*", "destination": "/projects/invoiceflow/:path*", "permanent": true },
+    { "source": "/progetti", "destination": "/projects/", "permanent": true },
+    { "source": "/progetti/:path*", "destination": "/projects/:path*", "permanent": true },
+    { "source": "/dashboard", "destination": "/projects/global-superstore/dashboard/", "permanent": true },
+    { "source": "/dashboard/:path*", "destination": "/projects/global-superstore/dashboard/:path*", "permanent": true }
+  ]
+}
