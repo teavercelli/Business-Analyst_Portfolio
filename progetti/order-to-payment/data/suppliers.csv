@@ -1,0 +1,26 @@
+supplier_id,supplier_name,category,perishable,payment_terms_days
+S01,Carni Alte Langhe,Fresh meat,True,30
+S02,Macello Valtanaro,Fresh meat,True,30
+S03,Bovini del Pianalto,Fresh meat,True,30
+S04,Carni Roera,Fresh meat,True,30
+S05,Filiera Monviso Carni,Fresh meat,True,30
+S06,Allevamento Cascina Brina,Livestock,False,60
+S07,Stalla Prato Lungo,Livestock,False,60
+S08,Allevamenti Rio Freddo,Livestock,False,60
+S09,Cascina Tre Pioppi,Livestock,False,60
+S10,Allevamento Borgo Sereno,Livestock,False,60
+S11,Mangimi Pianura Verde,Feed,False,60
+S12,Agrofeed Tanaro,Feed,False,60
+S13,Mangimificio Colle Basso,Feed,False,60
+S14,Nutrizione Zootecnica Nord,Feed,False,60
+S15,Imballi Sud Ovest,Packaging,False,60
+S16,PackPlast Novara,Packaging,False,60
+S17,Cartotecnica Valmora,Packaging,False,60
+S18,Film Alimentari Riva,Packaging,False,60
+S19,Trasporti Frigo Langa,Logistics,False,60
+S20,Logistica Freddo Est,Logistics,False,60
+S21,Autotrasporti Ponte Nero,Logistics,False,60
+S22,Frigoline Express,Logistics,False,60
+S23,Studio Qualità Alimenti,Services,False,60
+S24,Manutenzioni Frigo Tecno,Services,False,60
+S25,Lab Analisi Valdora,Services,False,60
