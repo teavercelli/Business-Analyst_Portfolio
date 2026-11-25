@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payables Workspace Prototype | Tea Vercelli</title>
+<meta name="description" content="Clickable front-end prototype of the redesigned approval inbox and payment calendar, with fictional data.">
+<link rel="stylesheet" href="../dashboard/dashboard.css?v=20261125b">
+<link rel="stylesheet" href="prototype.css?v=20261125">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to prototype</a>
+<header class="appbar">
+  <div class="appbar-in">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">€</span>
+      <div>
+        <h1>Payables Workspace</h1>
+        <p>TO-BE prototype · approvals and payment calendar · demo date Mon 16 Mar 2026</p>
+      </div>
+    </div>
+    <span class="badge">Clickable prototype · fictional data</span>
+  </div>
+</header>
+
+<main id="main" class="shell">
+  <div class="proto-top">
+    <nav class="tabs" role="tablist" aria-label="Workspace">
+      <button type="button" role="tab" id="tab-appr" aria-controls="panel-appr" aria-selected="true">Approvals <span class="count-pill" id="apprCount"></span></button>
+      <button type="button" role="tab" id="tab-cal" aria-controls="panel-cal" aria-selected="false">Payment calendar</button>
+      <button type="button" role="tab" id="tab-log" aria-controls="panel-log" aria-selected="false">Audit log</button>
+    </nav>
+    <label class="role">Viewing as
+      <select id="role">
+        <option value="finance">Finance manager (invoices above €5,000)</option>
+        <option value="purchasing">Purchasing manager (up to €5,000)</option>
+      </select>
+    </label>
+  </div>
+
+  <section id="panel-appr" role="tabpanel" aria-labelledby="tab-appr">
+    <div class="intro-row">
+      <p class="hint-text">Matched invoices routed to you by amount. Overdue approvals get an automatic reminder after 3 working days.</p>
+      <div class="chips" aria-label="User stories covered"><span>US-06</span><span>US-07</span><span>US-08</span><span>US-10</span></div>
+    </div>
+    <div class="appr-layout">
+      <div class="card list-card">
+        <div class="list-head">
+          <h2>Waiting for your approval</h2>
+          <label class="inline-filter"><input type="checkbox" id="onlyUrgent"> Urgent only</label>
+        </div>
+        <div class="table-wrap">
+          <table class="table appr-table">
+            <thead><tr><th scope="col">Supplier · invoice</th><th scope="col" class="num">Amount</th><th scope="col">Waiting</th><th scope="col">Due</th></tr></thead>
+            <tbody id="apprRows"></tbody>
+          </table>
+        </div>
+        <p class="empty" id="apprEmpty" hidden>Nothing waiting. All invoices in your queue are approved.</p>
+      </div>
+      <aside class="card detail-card" id="detail" aria-live="polite"></aside>
+    </div>
+  </section>
+
+  <section id="panel-cal" role="tabpanel" aria-labelledby="tab-cal" hidden>
+    <div class="intro-row">
+      <p class="hint-text">Each Friday run pays approved invoices on or just before their due date. Perishable invoices are scheduled before day 30.</p>
+      <div class="chips" aria-label="User stories covered"><span>US-08</span><span>US-09</span></div>
+    </div>
+    <div class="cash card">
+      <h2>Cash needed by payment run</h2>
+      <p class="sub">Approved invoices only · next four Fridays</p>
+      <div id="cashChart" class="chart"></div>
+    </div>
+    <div class="runs" id="runs"></div>
+  </section>
+
+  <section id="panel-log" role="tabpanel" aria-labelledby="tab-log" hidden>
+    <div class="intro-row"><p class="hint-text">Every decision is logged with user and time (NFR-01). Actions you take in this demo appear here.</p></div>
+    <div class="card"><ol class="log" id="log"></ol></div>
+  </section>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+</main>
+<script src="prototype.js?v=20261125"></script>
+</body>
+</html>
